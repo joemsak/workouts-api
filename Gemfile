@@ -1,6 +1,7 @@
 ruby '2.2.0'
 #ruby-gemset=workouts-api
 source 'https://rubygems.org'
+
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -11,16 +12,18 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
-
 gem 'underscore-rails', '~> 1.7'
 gem 'foundation-rails', '~> 5.3'
 gem 'friendly_id', '~> 5.0'
+
 group :test do
   gem 'pry-rails', '~> 0.3'
   gem 'pry-nav', '~> 0.2'
