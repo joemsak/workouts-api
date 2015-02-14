@@ -8,8 +8,13 @@ class Api::V1::ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = Exercise.create!(exercise_params)
-    render json: @exercise
+    Exercise.create!(exercise_params)
+    render nothing: true
+  end
+
+  def update
+    Exercise.find(params[:id]).update_attributes(exercise_params)
+    render nothing: true
   end
 
   private
