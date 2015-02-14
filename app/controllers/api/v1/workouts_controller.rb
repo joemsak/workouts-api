@@ -1,5 +1,5 @@
 class Api::V1::WorkoutsController < ApplicationController
   def index
-    render json: { workouts: Workout.all }
+    @workouts = Workout.includes(:exercises).all
   end
 end
