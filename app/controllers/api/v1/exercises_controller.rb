@@ -3,7 +3,7 @@ class Api::V1::ExercisesController < ApplicationController
     if: Proc.new { |c| c.request.format == 'application/json' }
 
   def show
-    render json: { exercise: Exercise.find(params[:id]) }
+    @exercise = Exercise.find(params[:id])
   end
 
   def create
