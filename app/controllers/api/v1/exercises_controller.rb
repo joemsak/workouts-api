@@ -7,8 +7,8 @@ class Api::V1::ExercisesController < ApplicationController
   end
 
   def create
-    Exercise.create!(exercise_params)
-    render nothing: true
+    @exercise = Exercise.create!(exercise_params)
+    render json: { exercise: @exercise }
   end
 
   def update

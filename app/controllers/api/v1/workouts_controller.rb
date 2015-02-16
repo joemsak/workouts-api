@@ -7,8 +7,8 @@ class Api::V1::WorkoutsController < ApplicationController
   end
 
   def create
-    Workout.create!(workout_params)
-    render nothing: true
+    @workout = Workout.create!(workout_params)
+    render json: { workout: @workout }
   end
 
   private
